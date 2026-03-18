@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Baptista - CV Online</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Roboto', sans-serif; background: #f5f6fa; color: #333; line-height: 1.6;}
+    a {text-decoration: none;}
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #6C63FF, #3B3B98);
+      color: #fff;
+      padding: 80px 20px 50px;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+    header h1 {font-family: 'Poppins', sans-serif; font-size: 3rem; margin-bottom: 10px;}
+    header p {font-size: 1.2rem; font-weight: 400;}
+
+    main {max-width: 900px; margin: -50px auto 50px; padding: 0 20px;}
+    section {margin-bottom: 60px; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;}
+    section.visible {opacity: 1; transform: translateY(0);}
+    section h2 {font-family: 'Poppins', sans-serif; font-size: 2rem; color: #6C63FF; margin-bottom: 20px; position: relative;}
+    section h2::after {content: ''; position: absolute; width: 70px; height: 4px; background: #6C63FF; bottom: -5px; left: 0; border-radius: 2px;}
+
+    .card {background: #fff; padding: 25px 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); margin-bottom: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .card:hover {transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15);}
+    .job h3, .course h3 {font-family: 'Poppins', sans-serif; color: #333; margin-bottom: 5px;}
+    .job span, .course span {font-size: 0.9rem; color: #555; display: block; margin-bottom: 10px;}
+    .job ul, .course ul {list-style: disc; margin-left: 20px; color: #555;}
+    
+    ul.skills-list {list-style: none; display: flex; flex-wrap: wrap; gap: 10px;}
+    ul.skills-list li {background: #6C63FF; color: #fff; padding: 8px 15px; border-radius: 25px; font-size: 0.9rem; transition: all 0.3s ease;}
+    ul.skills-list li:hover {background: #3B3B98; transform: scale(1.05);}
+
+    .contact a {display: inline-block; margin-right: 20px; color: #6C63FF; font-weight: bold; transition: color 0.3s ease;}
+    .contact a:hover {color: #3B3B98;}
+
+    footer {text-align: center; padding: 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #ddd;}
+
+    @media (max-width: 600px){
+      header h1 {font-size: 2.2rem;}
+      section h2 {font-size: 1.6rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="animate__animated animate__fadeInDown">
+    <h1>Maria Baptista</h1>
+    <p>Analista e Engenheira de QA | Desenvolvimento Web | Marketing Digital</p>
+  </header>
+
+  <main>
+    <!-- Sobre -->
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>Sou uma profissional dedicada e curiosa, com experiência em QA, desenvolvimento web, marketing digital e design. Tenho histórico em testes manuais e automatizados, criação de conteúdo estratégico, SEO e design com foco na experiência do usuário. Minha abordagem meticulosa e colaborativa garante resultados de alta qualidade em projetos multidisciplinares.</p>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia">
+      <h2>Experiência Profissional</h2>
+      <div class="card job">
+        <h3>Analista de QA – Empresa GG6</h3>
+        <span>Jan/2024 – Abr/2024</span>
+        <ul>
+          <li>Testes manuais e automatizados em aplicativos web e mobile.</li>
+          <li>Treinamento de novos membros de QA e melhores práticas.</li>
+          <li>Relatórios detalhados de qualidade e métricas de melhoria contínua.</li>
+        </ul>
+      </div>
+      <div class="card job">
+        <h3>Engenheira de QA | Dev Test – Empresa</h3>
+        <span>Mar/2023 – Mai/2023</span>
+        <ul>
+          <li>Identificação e documentação de bugs críticos.</li>
+          <li>Automação de testes com TestNG, aumentando eficiência em 50%.</li>
+          <li>Coordenação de testes de regressão e integração contínua.</li>
+        </ul>
+      </div>
+      <div class="card job">
+        <h3>Redator – BERKS NATURE</h3>
+        <span>Set/2023 – Out/2023</span>
+        <ul>
+          <li>Criação de posts interativos sobre sustentabilidade.</li>
+          <li>Campanhas que aumentaram visualizações do site em 45%.</li>
+        </ul>
+      </div>
+      <div class="card job">
+        <h3>Assistente de Vendas – Apricot Solar</h3>
+        <span>Jul/2022 – Ago/2022</span>
+        <ul>
+          <li>Desenvolvimento de estratégias de vendas e marketing.</li>
+          <li>Acompanhamento de campanhas e sugestões de melhorias.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao">
+      <h2>Formação Acadêmica</h2>
+      <div class="card course">
+        <h3>Técnico em Gestão de Redes e Sistemas Informáticos</h3>
+        <span>Instituto Lucrécio Dos Santos | Set/2020 – Cursando</span>
+      </div>
+      <div class="card course">
+        <h3>Marketing Digital</h3>
+        <span>Scottmax | 2023</span>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul class="skills-list">
+        <li>Testes Manuais e Automatizados</li>
+        <li>TestNG</li>
+        <li>Java, C, C#, PHP, Python</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Figma, Photoshop</li>
+        <li>WordPress, MailChimp</li>
+        <li>SEO Avançado</li>
+        <li>Google Analytics, HubSpot</li>
+        <li>Comunicação e Trabalho em Equipe</li>
+        <li>Gestão de Tempo</li>
+      </ul>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Entre em contato comigo para oportunidades e parcerias:</p>
+      <a href="mailto:mariakcbaptista06@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+      <a href="tel:+244926979430"><i class="fas fa-phone"></i> Telefone</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Maria Baptista. Todos os direitos reservados.
+  </footer>
+
+  <!-- Script para animação ao scroll -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {threshold: 0.2});
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
