@@ -1,112 +1,153 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Maria Baptista | Tech & AI Consultant</title>
+<title>Maria Baptista — Tech, AI & Salesforce</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
-    --navy: #032D60;
-    --blue: #0B5CAB;
-    --sky: #1B96FF;
-    --light: #F4F8FC;
-    --border: #DDE7F0;
-    --text: #172B4D;
-    --muted: #60758A;
-    --white: #FFFFFF;
+    --salesforce-navy: #032d60;
+    --salesforce-blue: #0b5cab;
+    --salesforce-sky: #1b96ff;
+    --ink: #172033;
+    --text: #344054;
+    --muted: #667085;
+    --line: #dfe5ec;
+    --soft: #f4f8fc;
+    --white: #ffffff;
 }
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    background: #EAF0F6;
-    color: var(--text);
-    font-family: "Inter", Arial, sans-serif;
-    line-height: 1.6;
+    background: #e9eef4;
+    color: var(--ink);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
+
+/* =========================
+   CV CONTAINER
+========================= */
 
 .cv {
     width: 210mm;
-    max-width: 100%;
-    margin: 30px auto;
+    min-height: 297mm;
+    margin: 22px auto;
     background: var(--white);
-    box-shadow: 0 20px 60px rgba(3, 45, 96, 0.14);
+
+    box-shadow:
+        0 18px 55px rgba(3, 45, 96, 0.15);
 }
 
 /* =========================
    HEADER
 ========================= */
 
-.header {
-    background: linear-gradient(135deg, #032D60 0%, #0B5CAB 70%, #1B96FF 100%);
-    color: white;
-    padding: 48px 52px 42px;
+.hero {
     position: relative;
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--salesforce-navy),
+            #0b477f
+        );
+
+    color: white;
+
+    padding: 31px 36px 27px;
 }
 
-.header::after {
+.hero::after {
     content: "";
+
     position: absolute;
-    width: 260px;
-    height: 260px;
-    border: 1px solid rgba(255,255,255,.14);
+
+    width: 210px;
+    height: 210px;
+
+    right: -55px;
+    top: -105px;
+
+    border:
+        45px solid
+        rgba(27, 150, 255, 0.20);
+
     border-radius: 50%;
-    right: -100px;
-    top: -100px;
 }
 
-.header::before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 50%;
-    right: 40px;
-    bottom: -110px;
-}
-
-.header-content {
+.hero-inner {
     position: relative;
-    z-index: 2;
+    z-index: 1;
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    opacity: 0.8;
 }
 
 .name {
-    margin: 0;
-    font-size: 31px;
-    line-height: 1.15;
+    margin: 4px 0 0;
+
+    font-size: 27px;
+    line-height: 1.1;
+
+    letter-spacing: -0.8px;
+
     font-weight: 800;
-    letter-spacing: -1px;
 }
 
-.role {
-    margin-top: 10px;
-    font-size: 14px;
+.title {
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
     font-weight: 700;
-    letter-spacing: 1.8px;
+
+    color: #d8ecff;
+
     text-transform: uppercase;
-    color: #D9EEFF;
 }
 
 .contact {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 22px;
-    margin-top: 25px;
-    font-size: 11.5px;
-    color: #EAF6FF;
-}
 
-.contact span {
-    white-space: nowrap;
+    gap: 6px 17px;
+
+    margin-top: 17px;
+
+    font-size: 9.5px;
+
+    color: #eaf5ff;
 }
 
 .contact a {
@@ -114,77 +155,109 @@ body {
     text-decoration: none;
 }
 
+.contact a:hover {
+    text-decoration: underline;
+}
+
 /* =========================
-   MAIN
+   LAYOUT
 ========================= */
 
-.main {
-    padding: 42px 52px 55px;
+.layout {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        67mm;
 }
+
+.main {
+    padding:
+        24px
+        26px
+        30px
+        36px;
+}
+
+.side {
+    background: var(--soft);
+
+    border-left:
+        1px solid
+        var(--line);
+
+    padding:
+        24px
+        23px
+        30px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
-    margin-bottom: 34px;
+    margin-bottom: 22px;
 }
 
-.section-title {
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section-head {
     display: flex;
+
     align-items: center;
-    gap: 12px;
-    margin: 0 0 17px;
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
 }
 
-.section-title::before {
+.section-head::before {
     content: "";
-    width: 24px;
+
+    width: 17px;
     height: 3px;
-    background: var(--sky);
-    border-radius: 4px;
+
+    border-radius: 5px;
+
+    background:
+        var(--salesforce-sky);
 }
+
+h2 {
+    margin: 0;
+
+    color:
+        var(--salesforce-navy);
+
+    font-size: 10.5px;
+
+    letter-spacing: 1.45px;
+
+    text-transform: uppercase;
+
+    font-weight: 800;
+}
+
+/* =========================
+   PROFILE
+========================= */
 
 .profile {
-    font-size: 12.5px;
-    color: #40566D;
-    max-width: 850px;
+    font-size: 10.4px;
+
+    line-height: 1.62;
+
+    color: var(--text);
+
+    text-align: justify;
 }
 
 .profile strong {
-    color: var(--navy);
-}
-
-/* =========================
-   HIGHLIGHTS
-========================= */
-
-.highlights {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 28px 0 36px;
-}
-
-.highlight {
-    background: var(--light);
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    padding: 15px 13px;
-}
-
-.highlight strong {
-    display: block;
-    color: var(--navy);
-    font-size: 11.5px;
-}
-
-.highlight span {
-    display: block;
-    color: var(--muted);
-    font-size: 9.5px;
-    margin-top: 2px;
+    color:
+        var(--salesforce-navy);
 }
 
 /* =========================
@@ -193,97 +266,211 @@ body {
 
 .job {
     position: relative;
-    padding-left: 21px;
-    margin-bottom: 27px;
-    border-left: 2px solid #D8E9F7;
+
+    margin-bottom: 18px;
+
+    padding-left: 13px;
+
+    border-left:
+        2px solid
+        #cfe5fb;
+}
+
+.job:last-child {
+    margin-bottom: 0;
 }
 
 .job::before {
     content: "";
+
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--sky);
-    border-radius: 50%;
+
     left: -5px;
-    top: 5px;
+    top: 2px;
+
+    width: 7px;
+    height: 7px;
+
+    background:
+        var(--salesforce-sky);
+
+    border-radius: 50%;
 }
 
-.job-head {
+.job-top {
     display: flex;
+
     justify-content: space-between;
-    gap: 20px;
+
     align-items: flex-start;
+
+    gap: 12px;
 }
 
 .company {
-    color: var(--navy);
-    font-size: 13px;
+    font-size: 12.5px;
+
+    line-height: 1.25;
+
     font-weight: 800;
+
+    color:
+        var(--salesforce-navy);
 }
 
-.position {
-    color: var(--blue);
-    font-size: 11.5px;
-    font-weight: 600;
-    margin-top: 1px;
+.role {
+    margin-top: 2px;
+
+    font-size: 9.5px;
+
+    font-weight: 700;
+
+    color:
+        var(--salesforce-blue);
 }
 
 .date {
-    color: var(--muted);
-    font-size: 10px;
     white-space: nowrap;
-    padding-top: 2px;
+
+    font-size: 8.5px;
+
+    color: var(--muted);
+
+    font-weight: 650;
 }
 
 ul {
-    margin: 9px 0 0;
-    padding-left: 17px;
+    margin:
+        6px
+        0
+        0;
+
+    padding-left: 16px;
 }
 
 li {
-    font-size: 10.8px;
-    color: #4A6074;
-    margin-bottom: 4px;
+    margin-bottom: 3.5px;
+
+    font-size: 9.3px;
+
+    line-height: 1.48;
+
+    color: var(--text);
 }
 
 li::marker {
-    color: var(--sky);
+    color:
+        var(--salesforce-sky);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.side-section {
+    margin-bottom: 21px;
+}
+
+.side-section:last-child {
+    margin-bottom: 0;
+}
+
+.side-label {
+    margin-bottom: 7px;
+
+    font-size: 8.5px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.1px;
+
+    font-weight: 800;
+
+    color:
+        var(--salesforce-navy);
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight {
+    padding: 10px 11px;
+
+    border-left:
+        3px solid
+        var(--salesforce-sky);
+
+    background:
+        var(--white);
+
+    color: var(--text);
+
+    font-size: 9px;
+
+    line-height: 1.52;
+}
+
+.highlight strong {
+    color:
+        var(--salesforce-navy);
+}
+
+.badge {
+    display: inline-block;
+
+    margin-top: 6px;
+
+    padding: 4px 7px;
+
+    border-radius: 4px;
+
+    background:
+        #e7f3ff;
+
+    color:
+        var(--salesforce-blue);
+
+    font-size: 7.5px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
 }
 
 /* =========================
    SKILLS
 ========================= */
 
-.skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+.chips {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
 }
 
-.skill-card {
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    padding: 15px 17px;
-    background: white;
-}
+.chip {
+    padding: 4px 6px;
 
-.skill-card.featured {
-    background: #F3F8FD;
-    border-color: #C8E0F5;
-}
+    border:
+        1px solid
+        #d7e1eb;
 
-.skill-card h3 {
-    margin: 0 0 7px;
-    font-size: 11px;
-    color: var(--navy);
-}
+    border-radius: 4px;
 
-.skill-card p {
-    margin: 0;
-    font-size: 10px;
-    line-height: 1.7;
-    color: var(--muted);
+    background:
+        var(--white);
+
+    color: var(--text);
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    font-weight: 650;
 }
 
 /* =========================
@@ -291,82 +478,129 @@ li::marker {
 ========================= */
 
 .project {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    padding: 15px 0;
-    border-bottom: 1px solid #E8EEF3;
+    padding: 8px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .project:last-child {
     border-bottom: 0;
 }
 
-.project-name {
-    color: var(--navy);
+.project-title {
+    font-size: 9.5px;
+
     font-weight: 800;
-    font-size: 11.5px;
+
+    color:
+        var(--salesforce-navy);
 }
 
-.project p {
-    margin: 4px 0 0;
+.project-desc {
+    margin-top: 2px;
+
+    font-size: 8.5px;
+
     color: var(--muted);
-    font-size: 10px;
+
+    line-height: 1.45;
 }
 
-.project a {
-    color: var(--blue);
-    font-size: 9px;
+.project a,
+.link {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--salesforce-blue);
+
     text-decoration: none;
-    align-self: center;
+
+    font-size: 8px;
+
+    font-weight: 650;
+
+    overflow-wrap: anywhere;
+}
+
+.project a:hover,
+.link:hover {
+    text-decoration: underline;
 }
 
 /* =========================
-   BOTTOM GRID
+   EDUCATION
 ========================= */
 
-.bottom-grid {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 38px;
-}
+.edu-title {
+    font-size: 9.5px;
 
-.info-item {
-    margin-bottom: 14px;
-}
-
-.info-title {
-    font-size: 10.5px;
     font-weight: 800;
-    color: var(--navy);
+
+    color:
+        var(--salesforce-navy);
 }
 
-.info-text {
-    font-size: 10px;
+.edu-meta {
+    margin-top: 2px;
+
+    font-size: 8.5px;
+
+    line-height: 1.45;
+
     color: var(--muted);
 }
 
 /* =========================
-   AI BOX
+   LANGUAGES
 ========================= */
 
-.ai-box {
-    background: linear-gradient(135deg, #F1F8FF, #F8FBFE);
-    border: 1px solid #CFE3F5;
-    border-radius: 10px;
-    padding: 18px 20px;
+.lang {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-bottom: 5px;
+
+    font-size: 8.5px;
 }
 
-.ai-box h3 {
-    margin: 0 0 7px;
-    font-size: 11.5px;
-    color: var(--navy);
+.lang strong {
+    color: var(--text);
 }
 
-.ai-box p {
-    margin: 0;
+.lang span {
     color: var(--muted);
-    font-size: 10.3px;
+
+    text-align: right;
+}
+
+/* =========================
+   PUBLICATIONS
+========================= */
+
+.pub {
+    font-size: 8.5px;
+
+    line-height: 1.45;
+
+    margin-bottom: 7px;
+
+    color: var(--text);
+}
+
+.pub:last-child {
+    margin-bottom: 0;
+}
+
+.pub strong {
+    color:
+        var(--salesforce-navy);
 }
 
 /* =========================
@@ -374,30 +608,130 @@ li::marker {
 ========================= */
 
 .footer {
-    border-top: 1px solid var(--border);
-    margin-top: 30px;
-    padding-top: 18px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    color: var(--muted);
-    font-size: 9px;
-}
+    padding:
+        10px
+        36px;
 
-.footer strong {
-    color: var(--navy);
+    border-top:
+        1px solid
+        var(--line);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 7.5px;
 }
 
 /* =========================
-   PRINT
+   PRINT BUTTON
 ========================= */
 
-@page {
-    size: A4;
-    margin: 0;
+.print {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    padding:
+        10px
+        14px;
+
+    background:
+        var(--salesforce-navy);
+
+    color: white;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
 }
 
+.print:hover {
+    background:
+        var(--salesforce-blue);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    body {
+        background: white;
+    }
+
+    .cv {
+        width: 100%;
+        min-height: 0;
+
+        margin: 0;
+
+        box-shadow: none;
+    }
+
+    .hero {
+        padding:
+            28px
+            22px
+            24px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main {
+        padding:
+            24px
+            22px;
+    }
+
+    .side {
+        border-left: 0;
+
+        border-top:
+            1px solid
+            var(--line);
+
+        padding:
+            24px
+            22px;
+    }
+
+    .footer {
+        padding:
+            10px
+            22px;
+    }
+}
+
+/* =========================
+   PRINT / PDF
+========================= */
+
 @media print {
+
+    @page {
+        size: A4;
+
+        margin: 0;
+    }
 
     body {
         background: white;
@@ -405,51 +739,26 @@ li::marker {
 
     .cv {
         width: 210mm;
+
+        min-height: 297mm;
+
         margin: 0;
+
         box-shadow: none;
     }
 
-    .header {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
+    .print {
+        display: none;
     }
 
-    .highlight,
-    .skill-card.featured,
-    .ai-box {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-}
-
-@media (max-width: 800px) {
-
-    .cv {
-        margin: 0;
+    a {
+        text-decoration: none !important;
     }
 
-    .header,
-    .main {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .highlights {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .skills,
-    .bottom-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .job-head {
-        flex-direction: column;
-        gap: 3px;
-    }
-
-    .date {
-        order: -1;
+    .section,
+    .job,
+    .side-section {
+        break-inside: avoid;
     }
 }
 </style>
@@ -457,578 +766,789 @@ li::marker {
 
 <body>
 
-<div class="cv">
+<article class="cv">
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-content">
+<!-- =========================
+     HEADER
+========================= -->
 
-            <h1 class="name">
-                MARIA KATCHAKILE<br>
-                CARLOS BAPTISTA
-            </h1>
+<header class="hero">
 
-            <div class="role">
-                Tech & AI Consultant · Software Development · Salesforce
-            </div>
+    <div class="hero-inner">
 
-            <div class="contact">
-                <span>📍 Luanda, Angola</span>
-                <span>📞 +244 956 870 550</span>
-                <span>✉️ mariakcbaptista06@gmail.com</span>
-                <span>
-                    <a href="https://github.com/Mariajtik">
-                        GitHub /Mariajtik
-                    </a>
-                </span>
-                <span>
-                    <a href="https://dev.to/mariakcbaptista">
-                        DEV.to /mariakcbaptista
-                    </a>
-                </span>
-            </div>
-
-        </div>
-    </header>
-
-
-    <main class="main">
-
-        <!-- POSITIONING -->
-        <div class="highlights">
-
-            <div class="highlight">
-                <strong>6 anos</strong>
-                <span>Desenvolvimento de software</span>
-            </div>
-
-            <div class="highlight">
-                <strong>Full Stack</strong>
-                <span>Frontend · Backend · APIs</span>
-            </div>
-
-            <div class="highlight">
-                <strong>AI + Automation</strong>
-                <span>IA aplicada ao desenvolvimento</span>
-            </div>
-
-            <div class="highlight">
-                <strong>International</strong>
-                <span>Experiência com equipas remotas</span>
-            </div>
-
+        <div class="eyebrow">
+            Technology · AI · CRM
         </div>
 
-
-        <!-- PROFILE -->
-        <section class="section">
-
-            <h2 class="section-title">
-                Perfil
-            </h2>
-
-            <p class="profile">
-                Profissional de tecnologia com <strong>6 anos de experiência prática em
-                desenvolvimento de software</strong>, com atuação em soluções web,
-                automação, Inteligência Artificial e integração de sistemas para
-                diferentes necessidades de negócio.
-            </p>
-
-            <p class="profile">
-                Experiência com <strong>JavaScript, React.js, Node.js, APIs REST,
-                UI/UX, n8n e ferramentas de IA</strong>, incluindo a utilização de
-                Inteligência Artificial como parte do processo de desenvolvimento,
-                prototipagem e automação.
-            </p>
-
-            <p class="profile">
-                Atualmente direcionada para a especialização em
-                <strong>Salesforce e consultoria tecnológica</strong>, combinando
-                uma base técnica sólida com experiência em negócio, comunicação
-                com clientes e trabalho autónomo em ambientes remotos.
-            </p>
-
-        </section>
-
-
-        <!-- CORE SKILLS -->
-        <section class="section">
-
-            <h2 class="section-title">
-                Competências
-            </h2>
-
-            <div class="skills">
-
-                <div class="skill-card featured">
-                    <h3>Salesforce</h3>
-                    <p>
-                        Conhecimentos introdutórios · Salesforce CRM ·
-                        Interesse em configuração, implementação e evolução
-                        de soluções · Percurso de especialização e certificação
-                    </p>
-                </div>
-
-                <div class="skill-card featured">
-                    <h3>Inteligência Artificial & Automação</h3>
-                    <p>
-                        AI-assisted development · Lovable · n8n ·
-                        Automação de workflows · Integração de APIs ·
-                        Prototipagem e desenvolvimento apoiado por IA
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Desenvolvimento</h3>
-                    <p>
-                        JavaScript · React.js · Node.js · HTML5 · CSS3 ·
-                        Tailwind CSS · REST APIs · SQL · Git
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Consultoria & Produto</h3>
-                    <p>
-                        Levantamento de requisitos · UI/UX · Prototipagem ·
-                        Comunicação com clientes · Gestão de projetos ·
-                        Documentação · Trello · Trabalho remoto
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Engenharia de Software</h3>
-                    <p>
-                        Clean Code · SOLID · TDD · Metodologias Ágeis ·
-                        Integração de sistemas · Desenvolvimento end-to-end
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Negócio & Cliente</h3>
-                    <p>
-                        Vendas · Marketing · Geração de leads ·
-                        Identificação de necessidades · Comunicação
-                        com diferentes públicos
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXPERIENCE -->
-        <section class="section">
-
-            <h2 class="section-title">
-                Experiência Profissional
-            </h2>
-
-
-            <article class="job">
-
-                <div class="job-head">
-
-                    <div>
-                        <div class="company">CLYRA — EUA</div>
-                        <div class="position">
-                            Desenvolvedora Full Stack
-                        </div>
-                    </div>
-
-                    <div class="date">
-                        Jan 2026 – Abr 2026
-                    </div>
-
-                </div>
-
-                <ul>
-                    <li>
-                        Desenvolvimento de aplicações e interfaces web
-                        com React.js, Node.js e Tailwind CSS.
-                    </li>
-
-                    <li>
-                        Participação em UI/UX, desde conceção e prototipagem
-                        até implementação.
-                    </li>
-
-                    <li>
-                        Desenvolvimento de automações e workflows utilizando
-                        n8n.
-                    </li>
-
-                    <li>
-                        Utilização de Lovable e ferramentas de IA para
-                        acelerar prototipagem e desenvolvimento.
-                    </li>
-
-                    <li>
-                        Integração da API do WhatsApp, QR Code e Stripe
-                        para comunicação, funcionalidades e pagamentos.
-                    </li>
-
-                    <li>
-                        Organização de trabalho através do Trello,
-                        com atuação autónoma em contexto remoto.
-                    </li>
-                </ul>
-
-            </article>
-
-
-            <article class="job">
-
-                <div class="job-head">
-
-                    <div>
-                        <div class="company">AGEDDOMS — EUA</div>
-                        <div class="position">
-                            Full Stack Developer
-                        </div>
-                    </div>
-
-                    <div class="date">
-                        Mai 2022 – Dez 2025
-                    </div>
-
-                </div>
-
-                <ul>
-                    <li>
-                        Desenvolvimento e manutenção de aplicações web
-                        para clientes internacionais.
-                    </li>
-
-                    <li>
-                        Desenvolvimento frontend com HTML, CSS,
-                        JavaScript e React.js.
-                    </li>
-
-                    <li>
-                        Desenvolvimento backend com Node.js e integração
-                        de APIs REST/GraphQL.
-                    </li>
-
-                    <li>
-                        Desenvolvimento de funcionalidades orientadas
-                        por requisitos técnicos e necessidades de negócio.
-                    </li>
-
-                    <li>
-                        Aplicação de princípios SOLID e Clean Code
-                        em soluções de software.
-                    </li>
-
-                    <li>
-                        Participação em equipas distribuídas e metodologias
-                        ágeis.
-                    </li>
-                </ul>
-
-            </article>
-
-
-            <article class="job">
-
-                <div class="job-head">
-
-                    <div>
-                        <div class="company">CAPITAL PRIME — BRASIL</div>
-                        <div class="position">
-                            Freelancer · Geração de Leads & Desenvolvimento Comercial
-                        </div>
-                    </div>
-
-                </div>
-
-                <ul>
-                    <li>
-                        Geração de leads através de redes sociais e
-                        primeiro contacto com potenciais clientes.
-                    </li>
-
-                    <li>
-                        Identificação de necessidades e encaminhamento
-                        de oportunidades qualificadas.
-                    </li>
-
-                    <li>
-                        Experiência prática em comunicação com clientes
-                        e processos comerciais.
-                    </li>
-                </ul>
-
-            </article>
-
-
-            <article class="job">
-
-                <div class="job-head">
-
-                    <div>
-                        <div class="company">RENDAFLEX — BRASIL</div>
-                        <div class="position">
-                            Freelancer · Geração de Leads & Marketing Digital
-                        </div>
-                    </div>
-
-                </div>
-
-                <ul>
-                    <li>
-                        Captação e gestão de leads através de canais digitais.
-                    </li>
-
-                    <li>
-                        Utilização de plataforma própria para apoiar
-                        processos de atendimento e gestão de oportunidades.
-                    </li>
-
-                    <li>
-                        Experiência com processos comerciais parcialmente
-                        automatizados e acompanhamento de potenciais clientes.
-                    </li>
-                </ul>
-
-            </article>
-
-
-            <article class="job">
-
-                <div class="job-head">
-
-                    <div>
-                        <div class="company">
-                            DESENVOLVIMENTO DE SOFTWARE
-                        </div>
-                        <div class="position">
-                            Projetos Freelance & Pessoais
-                        </div>
-                    </div>
-
-                    <div class="date">
-                        2020 – Presente
-                    </div>
-
-                </div>
-
-                <ul>
-                    <li>
-                        Desenvolvimento de soluções web e mobile end-to-end.
-                    </li>
-
-                    <li>
-                        Criação de sistemas de gestão, ERPs, e-commerces
-                        e websites responsivos.
-                    </li>
-
-                    <li>
-                        Desenvolvimento de interfaces, protótipos UI/UX
-                        e integrações com APIs.
-                    </li>
-
-                    <li>
-                        Gestão de projetos desde levantamento de requisitos
-                        e prototipagem até implementação e manutenção.
-                    </li>
-
-                </ul>
-
-            </article>
-
-        </section>
-
-
-        <!-- AI -->
-        <section class="section">
-
-            <h2 class="section-title">
-                IA Aplicada ao Desenvolvimento
-            </h2>
-
-            <div class="ai-box">
-
-                <h3>
-                    Inteligência Artificial como ferramenta de trabalho
-                </h3>
-
-                <p>
-                    Experiência prática na utilização de ferramentas de IA
-                    para apoio à programação, prototipagem, implementação
-                    de funcionalidades e automação de workflows. Utilização
-                    de Lovable e n8n, combinando IA, desenvolvimento tradicional
-                    e integração de APIs para acelerar a criação de soluções
-                    digitais.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-        <section class="section">
-
-            <h2 class="section-title">
-                Projetos Selecionados
-            </h2>
-
-
-            <div class="project">
-
-                <div>
-                    <div class="project-name">
-                        Kwendi — Aplicação de aprendizagem de Umbundu
-                    </div>
-
-                    <p>
-                        Projeto de tecnologia educacional focado em produto
-                        digital, UI/UX e aprendizagem através de tecnologia.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <div>
-                    <div class="project-name">
-                        Sistema de Gestão Escolar
-                    </div>
-
-                    <p>
-                        Sistema web para gestão de alunos, professores,
-                        turmas e relatórios.
-                    </p>
-                </div>
-
-                <a href="https://github.com/Mariajtik/sistema-gestao-escolar">
-                    GitHub →
+        <h1 class="name">
+            Maria Katchakile Carlos Baptista
+        </h1>
+
+        <div class="title">
+            Tech & AI Consultant · Software Development · Salesforce
+        </div>
+
+        <div class="contact">
+
+            <span>
+                Luanda, Angola
+            </span>
+
+            <span>
+                <a href="tel:+244956870550">
+                    +244 956 870 550
                 </a>
+            </span>
 
-            </div>
-
-
-            <div class="project">
-
-                <div>
-                    <div class="project-name">
-                        EthPool Simulator
-                    </div>
-
-                    <p>
-                        Aplicação web interativa para simulação visual
-                        de um pool de transações Ethereum.
-                    </p>
-                </div>
-
-                <a href="https://mariajtik.github.io/ethpool-simulator/">
-                    Live Demo →
+            <span>
+                <a href="mailto:mariakcbaptista06@gmail.com">
+                    mariakcbaptista06@gmail.com
                 </a>
+            </span>
 
-            </div>
+            <span>
+                <a
+                    href="https://github.com/Mariajtik"
+                    target="_blank"
+                >
+                    GitHub / Mariajtik
+                </a>
+            </span>
 
-        </section>
-
-
-        <!-- BOTTOM -->
-        <div class="bottom-grid">
-
-            <section>
-
-                <h2 class="section-title">
-                    Formação
-                </h2>
-
-                <div class="info-item">
-
-                    <div class="info-title">
-                        Gestão de Redes e de Sistemas Informáticos
-                    </div>
-
-                    <div class="info-text">
-                        Instituto Politécnico Privado Lucrécio dos Santos
-                        · 2021 – 2026
-                    </div>
-
-                </div>
-
-
-                <h2 class="section-title">
-                    Formação Complementar
-                </h2>
-
-                <div class="info-text">
-                    Workshop em Arquitetura de Microsserviços com .NET —
-                    Alura<br>
-                    Curso Intensivo de Marketing Digital<br>
-                    Curso de Oratória<br>
-                    Curso de Gestão de Conflitos
-                </div>
-
-            </section>
-
-
-            <section>
-
-                <h2 class="section-title">
-                    Idiomas
-                </h2>
-
-                <div class="info-text">
-                    <strong>Português</strong> — Nativo<br>
-                    <strong>Inglês</strong> — Avançado<br>
-                    <strong>Espanhol</strong> — Intermediário/Avançado<br>
-                    <strong>Italiano</strong> — Básico/Intermediário
-                </div>
-
-
-                <h2 class="section-title" style="margin-top:28px;">
-                    Publicações
-                </h2>
-
-                <div class="info-text">
-
-                    <strong>
-                        No Internet, No Cloud, No Problem
-                    </strong><br>
-                    DEV Community · 2025
-
-                    <br><br>
-
-                    <strong>
-                        Building a Full Stack App with .NET and Angular the TDD Way
-                    </strong><br>
-                    DEV Community · 2025
-
-                </div>
-
-            </section>
+            <span>
+                <a
+                    href="https://dev.to/mariakcbaptista"
+                    target="_blank"
+                >
+                    DEV.to / mariakcbaptista
+                </a>
+            </span>
 
         </div>
 
+    </div>
 
-        <footer class="footer">
+</header>
 
-            <span>
-                <strong>GitHub</strong> · github.com/Mariajtik
-            </span>
 
-            <span>
-                <strong>DEV.to</strong> · dev.to/mariakcbaptista
-            </span>
+<div class="layout">
 
-            <span>
-                Tech · AI · Salesforce
-            </span>
 
-        </footer>
+<!-- =========================
+     MAIN COLUMN
+========================= -->
 
-    </main>
+<main class="main">
+
+
+<!-- PROFILE -->
+
+<section class="section">
+
+    <div class="section-head">
+        <h2>Perfil</h2>
+    </div>
+
+    <p class="profile">
+
+        Profissional de tecnologia com experiência prática em
+        <strong>
+            desenvolvimento de software, Inteligência Artificial,
+            automação e soluções digitais
+        </strong>,
+
+        combinando uma base técnica sólida com experiência em
+        áreas de negócio, vendas, marketing e atendimento ao cliente.
+
+        Experiência com
+        <strong>
+            JavaScript, React.js, Node.js, APIs, UI/UX, n8n
+            e ferramentas de IA
+        </strong>,
+
+        incluindo aplicação de IA no processo de desenvolvimento.
+
+        Possuo conhecimentos de
+        <strong>Salesforce</strong>
+        e interesse em aprofundar a especialização na plataforma,
+        particularmente na implementação, evolução e otimização
+        de soluções empresariais.
+
+        Habituada a trabalhar com autonomia, equipas remotas,
+        clientes e prazos exigentes.
+
+    </p>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section">
+
+    <div class="section-head">
+        <h2>Experiência profissional</h2>
+    </div>
+
+
+    <!-- CLYRA -->
+
+    <div class="job">
+
+        <div class="job-top">
+
+            <div>
+
+                <div class="company">
+                    CLYRA — EUA
+                </div>
+
+                <div class="role">
+                    Desenvolvedora Full Stack · Customer Support
+                </div>
+
+            </div>
+
+            <div class="date">
+                Jan 2026 – Abr 2026
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li>
+                Desenvolvimento de aplicações e interfaces web
+                com <strong>React.js, Node.js e Tailwind CSS</strong>.
+            </li>
+
+            <li>
+                Criação e melhoria de fluxos de
+                <strong>UI/UX</strong>,
+                da prototipagem à implementação.
+            </li>
+
+            <li>
+                Utilização de
+                <strong>Lovable e ferramentas de IA</strong>
+                como parte central do fluxo de desenvolvimento,
+                acelerando prototipagem e implementação.
+            </li>
+
+            <li>
+                Desenvolvimento de automações e workflows
+                com <strong>n8n</strong>.
+            </li>
+
+            <li>
+                Integração com
+                <strong>API do WhatsApp</strong>,
+                QR Code e <strong>Stripe</strong>
+                para pagamentos e gestão de planos.
+            </li>
+
+            <li>
+                Durante 2 meses, atuação em
+                <strong>atendimento ao cliente</strong>,
+                esclarecendo dúvidas sobre a plataforma
+                e ajudando na resolução de problemas.
+            </li>
+
+            <li>
+                Organização de tarefas no
+                <strong>Trello</strong>
+                e entrega de funcionalidades em
+                prazos reduzidos.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- AGEDDOMS -->
+
+    <div class="job">
+
+        <div class="job-top">
+
+            <div>
+
+                <div class="company">
+                    AGEDDOMS — EUA
+                </div>
+
+                <div class="role">
+                    Full Stack Developer
+                </div>
+
+            </div>
+
+            <div class="date">
+                Mai 2022 – Dez 2025
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li>
+                Desenvolvimento e manutenção de aplicações web
+                para clientes internacionais.
+            </li>
+
+            <li>
+                Desenvolvimento frontend com
+                <strong>HTML, CSS, JavaScript e React.js</strong>.
+            </li>
+
+            <li>
+                Desenvolvimento backend com
+                <strong>Node.js</strong>
+                e integração de APIs.
+            </li>
+
+            <li>
+                Implementação de soluções seguindo princípios de
+                <strong>SOLID e Clean Code</strong>.
+            </li>
+
+            <li>
+                Colaboração em equipas distribuídas e metodologias
+                ágeis, com foco em requisitos técnicos e de negócio.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- CAPITAL PRIME -->
+
+    <div class="job">
+
+        <div class="job-top">
+
+            <div>
+
+                <div class="company">
+                    CAPITAL PRIME — BRASIL
+                </div>
+
+                <div class="role">
+                    Freelancer · Geração de Leads & Desenvolvimento Comercial
+                </div>
+
+            </div>
+
+            <div class="date">
+                1 ano
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li>
+                Geração de <strong>leads através de redes sociais</strong>,
+                utilizando materiais de apoio e conteúdos próprios.
+            </li>
+
+            <li>
+                Primeiro contacto e acompanhamento de potenciais
+                clientes através do <strong>WhatsApp</strong>.
+            </li>
+
+            <li>
+                Identificação das necessidades dos leads e
+                encaminhamento das oportunidades para a CEO,
+                Carla Martins.
+            </li>
+
+            <li>
+                Atuação na divulgação de serviços financeiros
+                relacionados com <strong>Serasa, Score e regularização de nome</strong>.
+            </li>
+
+            <li>
+                Gestão manual do processo de captação e
+                encaminhamento de oportunidades.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- RENDAFLEX -->
+
+    <div class="job">
+
+        <div class="job-top">
+
+            <div>
+
+                <div class="company">
+                    RENDAFLEX — BRASIL
+                </div>
+
+                <div class="role">
+                    Freelancer · Geração de Leads & Marketing Digital
+                </div>
+
+            </div>
+
+            <div class="date">
+                Jul 2026 – Presente
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li>
+                Captação e gestão de
+                <strong>leads através de canais digitais</strong>.
+            </li>
+
+            <li>
+                Utilização de plataforma própria para apoiar
+                e automatizar parte do processo de atendimento
+                e gestão das oportunidades.
+            </li>
+
+            <li>
+                Divulgação e encaminhamento de serviços financeiros,
+                incluindo <strong>FGTS, Bolsa Família e outros serviços</strong>.
+            </li>
+
+            <li>
+                Experiência com processos comerciais parcialmente
+                automatizados e acompanhamento de potenciais clientes.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- FREELANCE DEVELOPMENT -->
+
+    <div class="job">
+
+        <div class="job-top">
+
+            <div>
+
+                <div class="company">
+                    DESENVOLVEDORA DE SOFTWARE — FREELANCER
+                </div>
+
+                <div class="role">
+                    Desenvolvimento Web & Mobile
+                </div>
+
+            </div>
+
+            <div class="date">
+                Ago 2016 – Presente
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li>
+                Desenvolvimento de soluções web e mobile
+                end-to-end, incluindo sistemas de gestão,
+                e-commerces e websites responsivos.
+            </li>
+
+            <li>
+                Desenvolvimento de interfaces, protótipos
+                <strong>UI/UX</strong> e integração com APIs externas.
+            </li>
+
+            <li>
+                Gestão de projetos desde requisitos e prototipagem
+                até à entrega e manutenção.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="section">
+
+    <div class="section-head">
+        <h2>Projetos selecionados</h2>
+    </div>
+
+
+    <div class="project">
+
+        <div class="project-title">
+            Kwendi — Aplicação de aprendizagem de Umbundu
+        </div>
+
+        <div class="project-desc">
+            Projeto de tecnologia educacional com foco em
+            produto digital, UI/UX e aprendizagem através de tecnologia.
+        </div>
+
+    </div>
+
+
+    <div class="project">
+
+        <div class="project-title">
+            Sistema de Gestão Escolar
+        </div>
+
+        <div class="project-desc">
+            Sistema web para gestão de alunos, professores,
+            turmas e relatórios.
+        </div>
+
+        <a
+            href="https://github.com/Mariajtik/sistema-gestao-escolar"
+            target="_blank"
+        >
+            github.com/Mariajtik/sistema-gestao-escolar
+        </a>
+
+    </div>
+
+
+    <div class="project">
+
+        <div class="project-title">
+            EthPool Simulator
+        </div>
+
+        <div class="project-desc">
+            Aplicação web interativa para simulação visual
+            de um pool de transações Ethereum.
+        </div>
+
+        <a
+            href="https://mariajtik.github.io/ethpool-simulator-/"
+            target="_blank"
+        >
+            mariajtik.github.io/ethpool-simulator-/
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="side">
+
+
+<!-- POSITIONING -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Posicionamento
+    </div>
+
+    <div class="highlight">
+
+        <strong>
+            Tech + Business + AI
+        </strong>
+
+        <br>
+
+        Base técnica em desenvolvimento,
+        experiência prática com IA e automação
+        e contacto com clientes, vendas,
+        marketing e processos digitais.
+
+        <br>
+
+        <span class="badge">
+            Salesforce · AI · CRM
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Competências
+    </div>
+
+    <div class="chips">
+
+        <span class="chip">Salesforce</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">React.js</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">Tailwind CSS</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">n8n</span>
+        <span class="chip">Lovable</span>
+        <span class="chip">AI Tools</span>
+        <span class="chip">UI/UX</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Trello</span>
+        <span class="chip">WhatsApp API</span>
+        <span class="chip">Stripe</span>
+        <span class="chip">QR Code</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Git</span>
+        <span class="chip">SOLID</span>
+        <span class="chip">Clean Code</span>
+        <span class="chip">TDD</span>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Formação
+    </div>
+
+    <div class="edu-title">
+        Gestão de Redes e de Sistemas Informáticos
+    </div>
+
+    <div class="edu-meta">
+
+        Instituto Politécnico Privado
+        Lucrécio dos Santos
+
+        <br>
+
+        2021 – 2026
+
+    </div>
+
+</section>
+
+
+<!-- LANGUAGES -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Idiomas
+    </div>
+
+    <div class="lang">
+        <strong>Português</strong>
+        <span>Nativo</span>
+    </div>
+
+    <div class="lang">
+        <strong>Inglês</strong>
+        <span>Avançado</span>
+    </div>
+
+    <div class="lang">
+        <strong>Espanhol</strong>
+        <span>Interm./Avançado</span>
+    </div>
+
+    <div class="lang">
+        <strong>Italiano</strong>
+        <span>Básico/Interm.</span>
+    </div>
+
+</section>
+
+
+<!-- ADDITIONAL EDUCATION -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Formação complementar
+    </div>
+
+    <div class="edu-meta">
+
+        <strong>
+            Arquitetura de Microsserviços com .NET
+        </strong>
+
+        — Alura
+
+        <br><br>
+
+        Curso Intensivo de Marketing Digital
+
+        <br>
+
+        Curso de Oratória
+
+        <br>
+
+        Curso de Gestão de Conflitos
+
+    </div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Publicações técnicas
+    </div>
+
+    <div class="pub">
+
+        <strong>
+            No Internet, No Cloud, No Problem:
+            Building Monitoring Systems That Survive Offline
+        </strong>
+
+        <br>
+
+        DEV Community · 2025
+
+    </div>
+
+    <div class="pub">
+
+        <strong>
+            Building a Full Stack App with .NET
+            and Angular the TDD Way
+        </strong>
+
+        <br>
+
+        DEV Community · 2025
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="side-section">
+
+    <div class="side-label">
+        Portfólio
+    </div>
+
+    <a
+        class="link"
+        href="https://github.com/Mariajtik"
+        target="_blank"
+    >
+        GitHub · github.com/Mariajtik
+    </a>
+
+    <a
+        class="link"
+        href="https://dev.to/mariakcbaptista"
+        target="_blank"
+    >
+        DEV.to · dev.to/mariakcbaptista
+    </a>
+
+</section>
+
+</aside>
 
 </div>
 
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <span>
+        Maria Baptista · Tech & AI · Salesforce
+    </span>
+
+    <span>
+        Curriculum Vitae · 2026
+    </span>
+
+</footer>
+
+</article>
+
+
+<!-- PRINT -->
+
+<button
+    class="print"
+    onclick="window.print()"
+>
+    Imprimir / PDF
+</button>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const portfolioLinks =
+            document.querySelectorAll(
+                'a[target="_blank"]'
+            );
+
+        portfolioLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        console.log(
+                            "Portfolio:",
+                            link.href
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
 </body>
-  </html>
+    </html>
