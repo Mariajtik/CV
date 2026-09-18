@@ -1,1554 +1,680 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Maria Baptista — Tech, AI & Salesforce</title>
+<title>Maria Katchakile Carlos Baptista — CV</title>
 
 <style>
+@page {
+  size: A4;
+  margin: 0;
+}
+
 :root {
-    --salesforce-navy: #032d60;
-    --salesforce-blue: #0b5cab;
-    --salesforce-sky: #1b96ff;
-    --ink: #172033;
-    --text: #344054;
-    --muted: #667085;
-    --line: #dfe5ec;
-    --soft: #f4f8fc;
-    --white: #ffffff;
+  --ink: #17202a;
+  --muted: #64707d;
+  --line: #dfe4e8;
+  --accent: #087f8c;
+  --soft: #f4f7f8;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+html,
 body {
-    margin: 0;
-    background: #e9eef4;
-    color: var(--ink);
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    line-height: 1.5;
-
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  margin: 0;
+  padding: 0;
+  background: #eef1f3;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
-/* =========================
-   CV CONTAINER
-========================= */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+}
+
+.print-btn {
+  border: 0;
+  background: #17202a;
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 18px #0002;
+}
+
+.print-btn:hover {
+  background: #087f8c;
+}
 
 .cv {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 22px auto;
-    background: var(--white);
-
-    box-shadow:
-        0 18px 55px rgba(3, 45, 96, 0.15);
+  width: 210mm;
+  min-height: 297mm;
+  margin: 18px auto;
+  background: #fff;
+  padding: 15mm 16mm 13mm;
+  box-shadow: 0 12px 35px #0001;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.hero {
-    position: relative;
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--salesforce-navy),
-            #0b477f
-        );
-
-    color: white;
-
-    padding: 31px 36px 27px;
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 210px;
-    height: 210px;
-
-    right: -55px;
-    top: -105px;
-
-    border:
-        45px solid
-        rgba(27, 150, 255, 0.20);
-
-    border-radius: 50%;
-}
-
-.hero-inner {
-    position: relative;
-    z-index: 1;
-}
-
-.eyebrow {
-    font-size: 9px;
-    letter-spacing: 2px;
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    opacity: 0.8;
+.header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 14px;
 }
 
 .name {
-    margin: 4px 0 0;
-
-    font-size: 27px;
-    line-height: 1.1;
-
-    letter-spacing: -0.8px;
-
-    font-weight: 800;
-}
-
-.title {
-    margin-top: 6px;
-
-    font-size: 12px;
-
-    letter-spacing: 1.5px;
-
-    font-weight: 700;
-
-    color: #d8ecff;
-
-    text-transform: uppercase;
-}
-
-.contact {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 6px 17px;
-
-    margin-top: 17px;
-
-    font-size: 9.5px;
-
-    color: #eaf5ff;
-}
-
-.contact a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-/* =========================
-   LAYOUT
-========================= */
-
-.layout {
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        67mm;
-}
-
-.main {
-    padding:
-        24px
-        26px
-        30px
-        36px;
-}
-
-.side {
-    background: var(--soft);
-
-    border-left:
-        1px solid
-        var(--line);
-
-    padding:
-        24px
-        23px
-        30px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    margin-bottom: 22px;
-}
-
-.section:last-child {
-    margin-bottom: 0;
-}
-
-.section-head {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 9px;
-}
-
-.section-head::before {
-    content: "";
-
-    width: 17px;
-    height: 3px;
-
-    border-radius: 5px;
-
-    background:
-        var(--salesforce-sky);
-}
-
-h2 {
-    margin: 0;
-
-    color:
-        var(--salesforce-navy);
-
-    font-size: 10.5px;
-
-    letter-spacing: 1.45px;
-
-    text-transform: uppercase;
-
-    font-weight: 800;
-}
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile {
-    font-size: 10.4px;
-
-    line-height: 1.62;
-
-    color: var(--text);
-
-    text-align: justify;
-}
-
-.profile strong {
-    color:
-        var(--salesforce-navy);
-}
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.job {
-    position: relative;
-
-    margin-bottom: 18px;
-
-    padding-left: 13px;
-
-    border-left:
-        2px solid
-        #cfe5fb;
-}
-
-.job:last-child {
-    margin-bottom: 0;
-}
-
-.job::before {
-    content: "";
-
-    position: absolute;
-
-    left: -5px;
-    top: 2px;
-
-    width: 7px;
-    height: 7px;
-
-    background:
-        var(--salesforce-sky);
-
-    border-radius: 50%;
-}
-
-.job-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    gap: 12px;
-}
-
-.company {
-    font-size: 12.5px;
-
-    line-height: 1.25;
-
-    font-weight: 800;
-
-    color:
-        var(--salesforce-navy);
+  font-size: 29px;
+  letter-spacing: 1.4px;
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0;
 }
 
 .role {
-    margin-top: 2px;
-
-    font-size: 9.5px;
-
-    font-weight: 700;
-
-    color:
-        var(--salesforce-blue);
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: .35px;
+  margin-top: 8px;
 }
 
-.date {
-    white-space: nowrap;
+.tagline {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 9px;
+}
 
-    font-size: 8.5px;
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 16px;
+  margin-top: 10px;
+  font-size: 9.5px;
+  color: #3f4a55;
+}
 
-    color: var(--muted);
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    font-weight: 650;
+.layout {
+  display: grid;
+  grid-template-columns: 61% 35%;
+  gap: 4%;
+  margin-top: 18px;
+  align-items: start;
+}
+
+h2 {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin: 0 0 9px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 11.5px;
+  margin: 11px 0 3px;
+}
+
+p,
+li {
+  font-size: 9.4px;
+  line-height: 1.48;
+  margin: 0 0 7px;
 }
 
 ul {
-    margin:
-        6px
-        0
-        0;
-
-    padding-left: 16px;
+  padding-left: 15px;
+  margin: 5px 0;
 }
 
-li {
-    margin-bottom: 3.5px;
-
-    font-size: 9.3px;
-
-    line-height: 1.48;
-
-    color: var(--text);
+.section {
+  margin-bottom: 12px;
+  break-inside: avoid;
 }
 
-li::marker {
-    color:
-        var(--salesforce-sky);
+.meta {
+  font-size: 8.8px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
-
-.side-section {
-    margin-bottom: 21px;
+.side-block {
+  background: var(--soft);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--accent);
+  break-inside: avoid;
 }
 
-.side-section:last-child {
-    margin-bottom: 0;
+.side-block h2 {
+  border: 0;
+  padding: 0;
+  margin-bottom: 8px;
 }
 
-.side-label {
-    margin-bottom: 7px;
-
-    font-size: 8.5px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1.1px;
-
-    font-weight: 800;
-
-    color:
-        var(--salesforce-navy);
+.stack-row {
+  font-size: 9px;
+  line-height: 1.55;
+  margin-bottom: 7px;
 }
 
-/* =========================
-   HIGHLIGHT
-========================= */
-
-.highlight {
-    padding: 10px 11px;
-
-    border-left:
-        3px solid
-        var(--salesforce-sky);
-
-    background:
-        var(--white);
-
-    color: var(--text);
-
-    font-size: 9px;
-
-    line-height: 1.52;
+.stack-row b {
+  display: block;
+  font-size: 8.3px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #56616c;
+  margin-bottom: 1px;
 }
 
-.highlight strong {
-    color:
-        var(--salesforce-navy);
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
-.badge {
-    display: inline-block;
-
-    margin-top: 6px;
-
-    padding: 4px 7px;
-
-    border-radius: 4px;
-
-    background:
-        #e7f3ff;
-
-    color:
-        var(--salesforce-blue);
-
-    font-size: 7.5px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.4px;
-
-    text-transform: uppercase;
+.stat strong {
+  font-size: 22px;
 }
 
-/* =========================
-   SKILLS
-========================= */
-
-.chips {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
+.stat span {
+  font-size: 9px;
+  color: var(--muted);
+  font-weight: 700;
 }
-
-.chip {
-    padding: 4px 6px;
-
-    border:
-        1px solid
-        #d7e1eb;
-
-    border-radius: 4px;
-
-    background:
-        var(--white);
-
-    color: var(--text);
-
-    font-size: 8px;
-
-    line-height: 1;
-
-    font-weight: 650;
-}
-
-/* =========================
-   PROJECTS
-========================= */
 
 .project {
-    padding: 8px 0;
-
-    border-bottom:
-        1px solid
-        var(--line);
+  margin-bottom: 13px;
+  break-inside: avoid;
 }
 
-.project:last-child {
-    border-bottom: 0;
+.project h3 {
+  font-size: 11.2px;
 }
 
-.project-title {
-    font-size: 9.5px;
-
-    font-weight: 800;
-
-    color:
-        var(--salesforce-navy);
+.label {
+  font-weight: 700;
 }
 
-.project-desc {
-    margin-top: 2px;
-
-    font-size: 8.5px;
-
-    color: var(--muted);
-
-    line-height: 1.45;
+.links {
+  font-size: 8.8px;
+  word-break: break-all;
+  color: var(--accent);
 }
 
-.project a,
-.link {
-    display: block;
-
-    margin-top: 3px;
-
-    color:
-        var(--salesforce-blue);
-
-    text-decoration: none;
-
-    font-size: 8px;
-
-    font-weight: 650;
-
-    overflow-wrap: anywhere;
+.gh-card {
+  margin-top: 0;
+  border: 1px solid var(--line);
+  padding: 9px;
+  background: #fff;
+  width: 100%;
+  display: block;
+  position: relative;
+  clear: both;
 }
 
-.project a:hover,
-.link:hover {
-    text-decoration: underline;
+.gh-title {
+  font-size: 8.2px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 800;
+  color: #596570;
+  margin-bottom: 5px;
+  display: block;
 }
 
-/* =========================
-   EDUCATION
-========================= */
-
-.edu-title {
-    font-size: 9.5px;
-
-    font-weight: 800;
-
-    color:
-        var(--salesforce-navy);
+.gh-langs {
+  font-size: 8.2px;
+  line-height: 1.5;
+  color: #46515c;
+  display: block;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
-.edu-meta {
-    margin-top: 2px;
-
-    font-size: 8.5px;
-
-    line-height: 1.45;
-
-    color: var(--muted);
+.github-section {
+  margin-top: 14px;
+  clear: both;
+  position: relative;
+  break-inside: avoid;
 }
 
-/* =========================
-   LANGUAGES
-========================= */
-
-.lang {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 8px;
-
-    margin-bottom: 5px;
-
-    font-size: 8.5px;
+.github-section h2 {
+  margin-bottom: 9px;
 }
 
-.lang strong {
-    color: var(--text);
+.footer {
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  color: #66717b;
 }
-
-.lang span {
-    color: var(--muted);
-
-    text-align: right;
-}
-
-/* =========================
-   PUBLICATIONS
-========================= */
 
 .pub {
-    font-size: 8.5px;
-
-    line-height: 1.45;
-
-    margin-bottom: 7px;
-
-    color: var(--text);
-}
-
-.pub:last-child {
-    margin-bottom: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .pub strong {
-    color:
-        var(--salesforce-navy);
+  font-size: 9px;
+  display: block;
+  margin-bottom: 3px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    padding:
-        10px
-        36px;
-
-    border-top:
-        1px solid
-        var(--line);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: var(--muted);
-
-    font-size: 7.5px;
+.pub span {
+  font-size: 8px;
+  color: var(--muted);
 }
 
-/* =========================
-   PRINT BUTTON
-========================= */
-
-.print {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    border: 0;
-
-    border-radius: 8px;
-
-    padding:
-        10px
-        14px;
-
-    background:
-        var(--salesforce-navy);
-
-    color: white;
-
-    font-weight: 750;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.18);
+.org {
+  font-size: 9px;
+  line-height: 1.45;
 }
 
-.print:hover {
-    background:
-        var(--salesforce-blue);
+.tech-list {
+  font-size: 8.7px;
+  line-height: 1.55;
+  color: #44505b;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 850px) {
-
-    body {
-        background: white;
-    }
-
-    .cv {
-        width: 100%;
-        min-height: 0;
-
-        margin: 0;
-
-        box-shadow: none;
-    }
-
-    .hero {
-        padding:
-            28px
-            22px
-            24px;
-    }
-
-    .name {
-        font-size: 24px;
-    }
-
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    .main {
-        padding:
-            24px
-            22px;
-    }
-
-    .side {
-        border-left: 0;
-
-        border-top:
-            1px solid
-            var(--line);
-
-        padding:
-            24px
-            22px;
-    }
-
-    .footer {
-        padding:
-            10px
-            22px;
-    }
-}
-
-/* =========================
-   PRINT / PDF
-========================= */
 
 @media print {
+  body {
+    background: #fff;
+  }
 
-    @page {
-        size: A4;
+  .toolbar {
+    display: none;
+  }
 
-        margin: 0;
-    }
+  .cv {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    min-height: 297mm;
+  }
+}
 
-    body {
-        background: white;
-    }
+@media (max-width: 800px) {
+  .cv {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 25px 22px;
+  }
 
-    .cv {
-        width: 210mm;
-
-        min-height: 297mm;
-
-        margin: 0;
-
-        box-shadow: none;
-    }
-
-    .print {
-        display: none;
-    }
-
-    a {
-        text-decoration: none !important;
-    }
-
-    .section,
-    .job,
-    .side-section {
-        break-inside: avoid;
-    }
+  .layout {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<article class="cv">
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">Print CV</button>
+</div>
 
-<!-- =========================
-     HEADER
-========================= -->
+<main class="cv">
 
-<header class="hero">
+<header class="header">
+  <h1 class="name">MARIA KATCHAKILE CARLOS BAPTISTA</h1>
 
-    <div class="hero-inner">
+  <div class="role">
+    Web Developer · Full Stack · UI/UX · React &amp; TypeScript
+  </div>
 
-        <div class="eyebrow">
-            Technology · AI · CRM
-        </div>
+  <div class="tagline">
+    Technology, Learning and Challenges
+  </div>
 
-        <h1 class="name">
-            Maria Katchakile Carlos Baptista
-        </h1>
-
-        <div class="title">
-            Tech & AI Consultant · Software Development · Salesforce
-        </div>
-
-        <div class="contact">
-
-            <span>
-                Luanda, Angola
-            </span>
-
-            <span>
-                <a href="tel:+244956870550">
-                    +244 956 870 550
-                </a>
-            </span>
-
-            <span>
-                <a href="mailto:mariakcbaptista06@gmail.com">
-                    mariakcbaptista06@gmail.com
-                </a>
-            </span>
-
-            <span>
-                <a
-                    href="https://github.com/Mariajtik"
-                    target="_blank"
-                >
-                    GitHub / Mariajtik
-                </a>
-            </span>
-
-            <span>
-                <a
-                    href="https://dev.to/mariakcbaptista"
-                    target="_blank"
-                >
-                    DEV.to / mariakcbaptista
-                </a>
-            </span>
-
-        </div>
-
-    </div>
-
+  <div class="contact">
+    <span>EMEA — Africa: Icolo e Bengo, Angola</span>
+    <span>+244 956 870 550</span>
+    <a href="mailto:mariakcbaptista06@gmail.com">
+      mariakcbaptista06@gmail.com
+    </a>
+    <a href="https://github.com/Mariajtik">
+      github.com/Mariajtik
+    </a>
+    <a href="https://dev.to/mariakcbaptista">
+      dev.to/mariakcbaptista
+    </a>
+  </div>
 </header>
-
 
 <div class="layout">
 
+<section>
 
-<!-- =========================
-     MAIN COLUMN
-========================= -->
+  <div class="section">
+    <h2>Profile</h2>
 
-<main class="main">
-
-
-<!-- PROFILE -->
-
-<section class="section">
-
-    <div class="section-head">
-        <h2>Perfil</h2>
-    </div>
-
-    <p class="profile">
-
-        Profissional de tecnologia com experiência prática em
-        <strong>
-            desenvolvimento de software, Inteligência Artificial,
-            automação e soluções digitais
-        </strong>,
-
-        combinando uma base técnica sólida com experiência em
-        áreas de negócio, vendas, marketing e atendimento ao cliente.
-
-        Experiência com
-        <strong>
-            JavaScript, React.js, Node.js, APIs, UI/UX, n8n
-            e ferramentas de IA
-        </strong>,
-
-        incluindo aplicação de IA no processo de desenvolvimento.
-
-        Possuo conhecimentos de
-        <strong>Salesforce</strong>
-        e interesse em aprofundar a especialização na plataforma,
-        particularmente na implementação, evolução e otimização
-        de soluções empresariais.
-
-        Habituada a trabalhar com autonomia, equipas remotas,
-        clientes e prazos exigentes.
-
+    <p>
+      Computer Science student and software developer with 6 years of development
+      in web applications and digital solutions. Experience with JavaScript,
+      React, TypeScript, Node.js and Python, including responsive interfaces,
+      API integration and end-to-end development. Practical experience with UI/UX
+      and SEO in web projects, with the use of Git and GitHub in development and versioning.
     </p>
 
-</section>
+    <p>
+      Professional with a strong desire to grow in the technology field,
+      be in environments that promote her autonomy and learn more while executing
+      alongside experienced and global teams.
+    </p>
+  </div>
 
+  <div class="section">
+    <h2>Professional Experience</h2>
 
-<!-- EXPERIENCE -->
+    <h3>CLYRA — USA</h3>
 
-<section class="section">
-
-    <div class="section-head">
-        <h2>Experiência profissional</h2>
+    <div class="meta">
+      Full Stack Developer · Feb. 2026 — May 2026
     </div>
 
-
-    <!-- CLYRA -->
-
-    <div class="job">
-
-        <div class="job-top">
-
-            <div>
-
-                <div class="company">
-                    CLYRA — EUA
-                </div>
-
-                <div class="role">
-                    Desenvolvedora Full Stack · Customer Support
-                </div>
-
-            </div>
-
-            <div class="date">
-                Jan 2026 – Abr 2026
-            </div>
-
-        </div>
-
-        <ul>
-
-            <li>
-                Desenvolvimento de aplicações e interfaces web
-                com <strong>React.js, Node.js e Tailwind CSS</strong>.
-            </li>
-
-            <li>
-                Criação e melhoria de fluxos de
-                <strong>UI/UX</strong>,
-                da prototipagem à implementação.
-            </li>
-
-            <li>
-                Utilização de
-                <strong>Lovable e ferramentas de IA</strong>
-                como parte central do fluxo de desenvolvimento,
-                acelerando prototipagem e implementação.
-            </li>
-
-            <li>
-                Desenvolvimento de automações e workflows
-                com <strong>n8n</strong>.
-            </li>
-
-            <li>
-                Integração com
-                <strong>API do WhatsApp</strong>,
-                QR Code e <strong>Stripe</strong>
-                para pagamentos e gestão de planos.
-            </li>
-
-            <li>
-                Durante 2 meses, atuação em
-                <strong>atendimento ao cliente</strong>,
-                esclarecendo dúvidas sobre a plataforma
-                e ajudando na resolução de problemas.
-            </li>
-
-            <li>
-                Organização de tarefas no
-                <strong>Trello</strong>
-                e entrega de funcionalidades em
-                prazos reduzidos.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- AGEDDOMS -->
-
-    <div class="job">
-
-        <div class="job-top">
-
-            <div>
-
-                <div class="company">
-                    AGEDDOMS — EUA
-                </div>
-
-                <div class="role">
-                    Full Stack Developer
-                </div>
-
-            </div>
-
-            <div class="date">
-                Mai 2022 – Dez 2025
-            </div>
-
-        </div>
-
-        <ul>
-
-            <li>
-                Desenvolvimento e manutenção de aplicações web
-                para clientes internacionais.
-            </li>
-
-            <li>
-                Desenvolvimento frontend com
-                <strong>HTML, CSS, JavaScript e React.js</strong>.
-            </li>
-
-            <li>
-                Desenvolvimento backend com
-                <strong>Node.js</strong>
-                e integração de APIs.
-            </li>
-
-            <li>
-                Implementação de soluções seguindo princípios de
-                <strong>SOLID e Clean Code</strong>.
-            </li>
-
-            <li>
-                Colaboração em equipas distribuídas e metodologias
-                ágeis, com foco em requisitos técnicos e de negócio.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- CAPITAL PRIME -->
-
-    <div class="job">
-
-        <div class="job-top">
-
-            <div>
-
-                <div class="company">
-                    CAPITAL PRIME — BRASIL
-                </div>
-
-                <div class="role">
-                    Freelancer · Geração de Leads & Desenvolvimento Comercial
-                </div>
-
-            </div>
-
-            <div class="date">
-                1 ano
-            </div>
-
-        </div>
-
-        <ul>
-
-            <li>
-                Geração de <strong>leads através de redes sociais</strong>,
-                utilizando materiais de apoio e conteúdos próprios.
-            </li>
-
-            <li>
-                Primeiro contacto e acompanhamento de potenciais
-                clientes através do <strong>WhatsApp</strong>.
-            </li>
-
-            <li>
-                Identificação das necessidades dos leads e
-                encaminhamento das oportunidades para a CEO,
-                Carla Martins.
-            </li>
-
-            <li>
-                Atuação na divulgação de serviços financeiros
-                relacionados com <strong>Serasa, Score e regularização de nome</strong>.
-            </li>
-
-            <li>
-                Gestão manual do processo de captação e
-                encaminhamento de oportunidades.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- RENDAFLEX -->
-
-    <div class="job">
-
-        <div class="job-top">
-
-            <div>
-
-                <div class="company">
-                    RENDAFLEX — BRASIL
-                </div>
-
-                <div class="role">
-                    Freelancer · Geração de Leads & Marketing Digital
-                </div>
-
-            </div>
-
-            <div class="date">
-                Jul 2026 – Presente
-            </div>
-
-        </div>
-
-        <ul>
-
-            <li>
-                Captação e gestão de
-                <strong>leads através de canais digitais</strong>.
-            </li>
-
-            <li>
-                Utilização de plataforma própria para apoiar
-                e automatizar parte do processo de atendimento
-                e gestão das oportunidades.
-            </li>
-
-            <li>
-                Divulgação e encaminhamento de serviços financeiros,
-                incluindo <strong>FGTS, Bolsa Família e outros serviços</strong>.
-            </li>
-
-            <li>
-                Experiência com processos comerciais parcialmente
-                automatizados e acompanhamento de potenciais clientes.
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- FREELANCE DEVELOPMENT -->
-
-    <div class="job">
-
-        <div class="job-top">
-
-            <div>
-
-                <div class="company">
-                    DESENVOLVEDORA DE SOFTWARE — FREELANCER
-                </div>
-
-                <div class="role">
-                    Desenvolvimento Web & Mobile
-                </div>
-
-            </div>
-
-            <div class="date">
-                Ago 2016 – Presente
-            </div>
-
-        </div>
-
-        <ul>
-
-            <li>
-                Desenvolvimento de soluções web e mobile
-                end-to-end, incluindo sistemas de gestão,
-                e-commerces e websites responsivos.
-            </li>
-
-            <li>
-                Desenvolvimento de interfaces, protótipos
-                <strong>UI/UX</strong> e integração com APIs externas.
-            </li>
-
-            <li>
-                Gestão de projetos desde requisitos e prototipagem
-                até à entrega e manutenção.
-            </li>
-
-        </ul>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section class="section">
-
-    <div class="section-head">
-        <h2>Projetos selecionados</h2>
-    </div>
-
+    <p>
+      Development of applications, web interfaces with React.js, TypeScript,
+      Tailwind CSS and as backend-as-a-service Supabase (PostgreSQL).
+    </p>
+
+    <p>Greater creation of frontend functionalities.</p>
+
+    <p>
+      Organization of team tasks using Trello and ClickUp.
+    </p>
+
+    <p>
+      Effective communication through Discord.
+    </p>
+
+    <p>
+      Participation in product design through weekly calls.
+    </p>
+
+    <p>
+      Integration of the WhatsApp API, QR Code and Stripe into the Gendo Zap plugin.
+    </p>
+
+    <p>
+      Use of Lovable to facilitate and accelerate development and correction
+      of bugs found on the platform by users.
+    </p>
+
+    <p>
+      Elaboration of constant tests, code review and manual development where AI fails.
+    </p>
+
+    <p>
+      Greater autonomy in a remote context.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Selected Projects</h2>
 
     <div class="project">
+      <h3>Kwendi — Kwendy Language Journey</h3>
 
-        <div class="project-title">
-            Kwendi — Aplicação de aprendizagem de Umbundu
-        </div>
+      <p>
+        Developed with Vite, TypeScript, React, shadcn-ui, Tailwind CSS and Supabase.
+      </p>
 
-        <div class="project-desc">
-            Projeto de tecnologia educacional com foco em
-            produto digital, UI/UX e aprendizagem através de tecnologia.
-        </div>
+      <p>
+        Final-year technological project developed in 13th Grade for teaching
+        one of Angola's national languages — Umbundu — through gamification,
+        including SEO practices, UI/UX and responsive design.
+      </p>
 
+      <p>
+        <span class="label">Obtained 19/20 in the defense.</span>
+      </p>
+
+      <div class="links">
+        GitHub: github.com/Mariajtik/kwendy-language-journey
+      </div>
     </div>
-
 
     <div class="project">
+      <h3>EthPool Simulator</h3>
 
-        <div class="project-title">
-            Sistema de Gestão Escolar
-        </div>
+      <p>
+        Interactive web application for visual simulation of an Ethereum transaction pool.
+      </p>
 
-        <div class="project-desc">
-            Sistema web para gestão de alunos, professores,
-            turmas e relatórios.
-        </div>
+      <p>
+        <span class="label">Technology:</span> HTML
+      </p>
 
-        <a
-            href="https://github.com/Mariajtik/sistema-gestao-escolar"
-            target="_blank"
-        >
-            github.com/Mariajtik/sistema-gestao-escolar
-        </a>
-
+      <div class="links">
+        Live Demo: mariajtik.github.io/ethpool-simulator-/
+      </div>
     </div>
-
 
     <div class="project">
+      <h3>School Management System</h3>
 
-        <div class="project-title">
-            EthPool Simulator
-        </div>
+      <p>
+        School management system developed with React, .NET and modern web technologies.
+      </p>
 
-        <div class="project-desc">
-            Aplicação web interativa para simulação visual
-            de um pool de transações Ethereum.
-        </div>
+      <p>
+        <span class="label">Stack:</span>
+        React · TypeScript · .NET · C# · Docker
+      </p>
 
-        <a
-            href="https://mariajtik.github.io/ethpool-simulator-/"
-            target="_blank"
-        >
-            mariajtik.github.io/ethpool-simulator-/
-        </a>
-
+      <div class="links">
+        GitHub: github.com/Mariajtik/sistema-gestao-escolar
+      </div>
     </div>
+
+    <div class="project">
+      <h3>Task Manager App</h3>
+
+      <p>
+        Minimalist web application for task management, developed with HTML5,
+        CSS3 and JavaScript.
+      </p>
+
+      <p>
+        Features include task creation, completion, deletion, task counter
+        and responsive design.
+      </p>
+
+      <div class="links">
+        Live Demo: mariajtik.github.io/task-manager-app/
+      </div>
+
+      <p>
+        <span class="label">License:</span> MIT
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Development · 2020 — Present</h2>
+
+    <p>
+      Essential phase to develop a fascination for technology through academic,
+      commercial and personal development projects with the following technologies:
+      HTML, CSS, JavaScript, Java, C++, C#, Dart, Flutter, Portugol Studio, .NET,
+      Python, PHP, Vite, React, TypeScript, Node.js, MySQL, PostgreSQL and currently
+      learning Angular, GraphQL and Vue.js. Thus accumulating relevant experience
+      in requirements gathering, prototyping and maintenance of digital solutions.
+    </p>
+
+    <p>
+      <b>Academic Projects:</b> 5
+      &nbsp;&nbsp;
+      <b>Commercial Projects:</b> 8
+      &nbsp;&nbsp;
+      <b>Personal Projects:</b> 7
+    </p>
+  </div>
 
 </section>
 
-</main>
+<aside>
 
+  <div class="side-block">
+    <h2>Experience</h2>
 
-<!-- =========================
-     SIDEBAR
-========================= -->
-
-<aside class="side">
-
-
-<!-- POSITIONING -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Posicionamento
+    <div class="stat">
+      <strong>6</strong>
+      <span>YEARS</span>
     </div>
 
-    <div class="highlight">
+    <p style="margin-top:4px">
+      <b>Full Stack</b><br>
+      Frontend · Backend · APIs
+    </p>
+  </div>
 
-        <strong>
-            Tech + Business + AI
-        </strong>
+  <div class="side-block">
+    <h2>Stack</h2>
 
-        <br>
-
-        Base técnica em desenvolvimento,
-        experiência prática com IA e automação
-        e contacto com clientes, vendas,
-        marketing e processos digitais.
-
-        <br>
-
-        <span class="badge">
-            Salesforce · AI · CRM
-        </span>
-
+    <div class="stack-row">
+      <b>Frontend</b>
+      HTML5 · CSS3 · JavaScript · TypeScript · React
     </div>
 
-</section>
-
-
-<!-- SKILLS -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Competências
+    <div class="stack-row">
+      <b>Backend</b>
+      Node.js · Python · REST APIs · MySQL
     </div>
 
-    <div class="chips">
-
-        <span class="chip">Salesforce</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">React.js</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">Tailwind CSS</span>
-        <span class="chip">REST APIs</span>
-        <span class="chip">n8n</span>
-        <span class="chip">Lovable</span>
-        <span class="chip">AI Tools</span>
-        <span class="chip">UI/UX</span>
-        <span class="chip">Figma</span>
-        <span class="chip">Trello</span>
-        <span class="chip">WhatsApp API</span>
-        <span class="chip">Stripe</span>
-        <span class="chip">QR Code</span>
-        <span class="chip">SQL</span>
-        <span class="chip">Git</span>
-        <span class="chip">SOLID</span>
-        <span class="chip">Clean Code</span>
-        <span class="chip">TDD</span>
-
+    <div class="stack-row">
+      <b>Web</b>
+      Responsive Design · SEO · UI/UX
     </div>
 
-</section>
-
-
-<!-- EDUCATION -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Formação
+    <div class="stack-row">
+      <b>Tools</b>
+      Git · GitHub · n8n · Trello · Notion
     </div>
 
-    <div class="edu-title">
-        Gestão de Redes e de Sistemas Informáticos
+    <div class="stack-row">
+      <b>Engineering</b>
+      Clean Code · SOLID · TDD · Agile
     </div>
+  </div>
 
-    <div class="edu-meta">
+  <div class="side-block">
+    <h2>Languages</h2>
 
-        Instituto Politécnico Privado
-        Lucrécio dos Santos
+    <p>Portuguese — Native</p>
+    <p>English — B2 (Upper-Intermediate)</p>
+    <p>Spanish — C1 (Advanced)</p>
+  </div>
 
-        <br>
+  <div class="section">
+    <h2>Organization</h2>
 
-        2021 – 2026
+    <h3>SysCommFlow-Org</h3>
 
-    </div>
+    <p class="org">
+      <b>SysCommFlow.Organization</b><br>
+      Organization dedicated to the development of technological solutions
+      and integrated software.
+    </p>
+  </div>
 
-</section>
+  <div class="section">
+    <h2>Education</h2>
 
+    <h3>Computer Science</h3>
 
-<!-- LANGUAGES -->
+    <p>
+      <b>Instituto Superior Privado Kiaxi</b><br>
+      2026 — Present
+    </p>
 
-<section class="side-section">
+    <h3>Network and Computer Systems Management</h3>
 
-    <div class="side-label">
-        Idiomas
-    </div>
+    <p>
+      <b>Instituto Politécnico Privado Lucrécio dos Santos</b><br>
+      2022 — 2026
+    </p>
 
-    <div class="lang">
-        <strong>Português</strong>
-        <span>Nativo</span>
-    </div>
+    <p>
+      <b>Average:</b> 15/20<br>
+      <b>Merit Student</b>
+    </p>
+  </div>
 
-    <div class="lang">
-        <strong>Inglês</strong>
-        <span>Avançado</span>
-    </div>
+  <div class="section">
+    <h2>Publications</h2>
 
-    <div class="lang">
-        <strong>Espanhol</strong>
-        <span>Interm./Avançado</span>
-    </div>
-
-    <div class="lang">
-        <strong>Italiano</strong>
-        <span>Básico/Interm.</span>
-    </div>
-
-</section>
-
-
-<!-- ADDITIONAL EDUCATION -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Formação complementar
-    </div>
-
-    <div class="edu-meta">
-
-        <strong>
-            Arquitetura de Microsserviços com .NET
-        </strong>
-
-        — Alura
-
-        <br><br>
-
-        Curso Intensivo de Marketing Digital
-
-        <br>
-
-        Curso de Oratória
-
-        <br>
-
-        Curso de Gestão de Conflitos
-
-    </div>
-
-</section>
-
-
-<!-- PUBLICATIONS -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Publicações técnicas
+    <div class="pub">
+      <strong>Salesforce? What We Should Know</strong>
+      <span>
+        Published: Aug. 30 · Reactions: 1 · Comments: 0 · Views: &lt; 25
+      </span>
     </div>
 
     <div class="pub">
-
-        <strong>
-            No Internet, No Cloud, No Problem:
-            Building Monitoring Systems That Survive Offline
-        </strong>
-
-        <br>
-
-        DEV Community · 2025
-
+      <strong>AI-Assisted Development Without Losing Engineering Judgment</strong>
+      <span>
+        Published: Aug. 29 · 4 reactions · 0 comments · 42 views
+      </span>
     </div>
 
     <div class="pub">
-
-        <strong>
-            Building a Full Stack App with .NET
-            and Angular the TDD Way
-        </strong>
-
-        <br>
-
-        DEV Community · 2025
-
+      <strong>Building a Full Stack App with .NET and Angular the TDD Way</strong>
+      <span>
+        Published: Sep. 19, 2025 · 5 reactions · 1 comment · 277 views
+      </span>
     </div>
+  </div>
 
-</section>
+  <div class="section github-section">
+    <h2>GitHub · Mariajtik</h2>
 
+    <div class="gh-card">
+      <div class="gh-title">
+        Most Used Languages
+      </div>
 
-<!-- PORTFOLIO -->
-
-<section class="side-section">
-
-    <div class="side-label">
-        Portfólio
+      <div class="gh-langs">
+        TypeScript (86.75%) · PLpgSQL (5.33%) · HTML (3.33%) ·
+        C++ (1.55%) · CMake (1.27%) · CSS (0.48%) · PHP (0.47%) ·
+        Dart (0.29%) · Blade (0.29%) · Python (0.25%)
+      </div>
     </div>
-
-    <a
-        class="link"
-        href="https://github.com/Mariajtik"
-        target="_blank"
-    >
-        GitHub · github.com/Mariajtik
-    </a>
-
-    <a
-        class="link"
-        href="https://dev.to/mariakcbaptista"
-        target="_blank"
-    >
-        DEV.to · dev.to/mariakcbaptista
-    </a>
-
-</section>
+  </div>
 
 </aside>
 
 </div>
 
-
-<!-- FOOTER -->
-
 <footer class="footer">
-
-    <span>
-        Maria Baptista · Tech & AI · Salesforce
-    </span>
-
-    <span>
-        Curriculum Vitae · 2026
-    </span>
-
+  MARIA KATCHAKILE CARLOS BAPTISTA · WEB DEVELOPER · GITHUB.COM/MARIAJTIK
 </footer>
 
-</article>
-
-
-<!-- PRINT -->
-
-<button
-    class="print"
-    onclick="window.print()"
->
-    Imprimir / PDF
-</button>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const portfolioLinks =
-            document.querySelectorAll(
-                'a[target="_blank"]'
-            );
-
-        portfolioLinks.forEach(
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        console.log(
-                            "Portfolio:",
-                            link.href
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-    }
-);
-
-</script>
+</main>
 
 </body>
     </html>
